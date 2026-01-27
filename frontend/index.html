@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Image Generation</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="main-card">
+            <!-- Header -->
+            <h1 class="title">AI Image Generation</h1>
+
+            <!-- Status Bar -->
+            <div class="status-bar">
+                <span class="status-label">Status:</span>
+                <span id="status-text" class="status-value">Ready</span>
+                <span id="status-indicator" class="status-dot ready"></span>
+            </div>
+
+            <!-- Section 1: Text to Image -->
+            <div class="section">
+                <h2 class="section-title">1. Text &rarr; Enhance &rarr; Approve &rarr; Image</h2>
+
+                <div class="input-group">
+                    <input
+                        type="text"
+                        id="prompt-input"
+                        class="text-input"
+                        placeholder="Enter a prompt..."
+                    >
+                </div>
+
+                <button id="enhance-btn" class="btn btn-primary">
+                    <span class="btn-icon">&#10024;</span>
+                    Enhance Prompt
+                </button>
+
+                <!-- Enhanced Prompt Display -->
+                <div id="enhanced-prompt-container" class="enhanced-prompt-container hidden">
+                    <label class="label">Enhanced Prompt:</label>
+                    <div id="enhanced-prompt-display" class="enhanced-prompt-display"></div>
+                    <div class="prompt-actions">
+                        <button id="approve-btn" class="btn btn-success btn-sm">Approve</button>
+                        <button id="edit-btn" class="btn btn-secondary btn-sm">Edit</button>
+                    </div>
+                </div>
+
+                <button id="generate-image-btn" class="btn btn-generate" disabled>
+                    <span class="btn-icon">&#128444;</span>
+                    Generate Image
+                </button>
+
+                <!-- Generated Image Display -->
+                <div id="generated-image-container" class="image-container hidden">
+                    <label class="label">Generated Image:</label>
+                    <img id="generated-image" class="generated-image" alt="Generated Image">
+                    <button id="download-image-btn" class="btn btn-secondary btn-sm">
+                        <span class="btn-icon">&#8595;</span>
+                        Download Image
+                    </button>
+                </div>
+            </div>
+
+            <hr class="divider">
+
+            <!-- Section 2: Image to Variation -->
+            <div class="section">
+                <h2 class="section-title">2. Image &rarr; Analysis &rarr; Variation</h2>
+
+                <div class="file-upload-container">
+                    <input
+                        type="file"
+                        id="image-upload"
+                        class="file-input"
+                        accept="image/*"
+                    >
+                    <label for="image-upload" class="file-label">
+                        <span class="file-icon">&#128193;</span>
+                        Choose File
+                    </label>
+                    <span id="file-name" class="file-name">No file chosen</span>
+                </div>
+
+                <!-- Image Preview -->
+                <div id="upload-preview-container" class="image-preview-container hidden">
+                    <img id="upload-preview" class="image-preview" alt="Upload Preview">
+                </div>
+
+                <button id="analyze-btn" class="btn btn-analyze" disabled>
+                    <span class="btn-icon">&#128269;</span>
+                    Analyze Image
+                </button>
+
+                <!-- Analysis Display -->
+                <div id="analysis-container" class="analysis-container">
+                    <label class="label">Analysis:</label>
+                    <div id="analysis-display" class="analysis-display">Awaiting analysis...</div>
+                </div>
+
+                <button id="generate-variation-btn" class="btn btn-variation" disabled>
+                    <span class="btn-icon">&#127912;</span>
+                    Generate Variation
+                </button>
+
+                <!-- Variation Image Display -->
+                <div id="variation-image-container" class="image-container hidden">
+                    <label class="label">Generated Variation:</label>
+                    <img id="variation-image" class="generated-image" alt="Variation Image">
+                    <button id="download-variation-btn" class="btn btn-secondary btn-sm">
+                        <span class="btn-icon">&#8595;</span>
+                        Download Variation
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Loading Overlay -->
+        <div id="loading-overlay" class="loading-overlay hidden">
+            <div class="spinner"></div>
+            <p id="loading-text" class="loading-text">Processing...</p>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
