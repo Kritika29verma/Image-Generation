@@ -27,7 +27,7 @@ app.use(express.json({ limit: '50mb' }));
 
 // --- MODEL CONSTANTS ---
 const MULTIMODAL_MODEL = "gemini-2.5-flash";
-const T2I_MODEL = "gemini-2.5-flash-image-preview"; // Image generation
+const T2I_MODEL = "gemini-2.5-flash-image"; // Image generation
 
 const safetySettings = [
     { category: HarmCategory.HARM_CATEGORY_HARASSMENT, threshold: HarmBlockThreshold.BLOCK_NONE },
