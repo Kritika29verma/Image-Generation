@@ -1,5 +1,5 @@
-// API Base URL - Change this to your backend URL
-const API_BASE_URL = 'http://localhost:3001';
+// API Base URL - empty string for same-origin (Vercel), or localhost for local dev
+const API_BASE_URL = window.location.hostname === 'localhost' ? 'http://localhost:3001' : '';
 
 // DOM Elements
 const statusText = document.getElementById('status-text');

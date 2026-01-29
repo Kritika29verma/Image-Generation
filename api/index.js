@@ -217,14 +217,16 @@ app.post('/api/generate-variation', async (req, res) => {
 });
 
 app.get("/",(req, res)=>{
-    res.status(200).send({message:"server staed on port no 3001"})
+    res.status(200).send({message:"server started on port no 3001"})
 })
+
+// Only listen locally (not on Vercel)
+if (process.env.NODE_ENV !== 'production') {
     const PORT = 3001;
     app.listen(PORT, () => {
         console.log(`Local server running on http://localhost:${PORT}`);
     });
-
-
+}
 
 // Export the Express app as a serverless function handler
-// module.exports = app; 
+module.exports = app;
