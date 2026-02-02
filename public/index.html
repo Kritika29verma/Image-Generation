@@ -5,12 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Image Generation</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
         <div class="main-card">
-            <!-- Header -->
             <h1 class="title">AI Image Generation</h1>
 
             <!-- Status Bar -->
@@ -22,7 +20,7 @@
 
             <!-- Section 1: Text to Image -->
             <div class="section">
-                <h2 class="section-title">1. Text &rarr; Enhance &rarr; Approve &rarr; Image</h2>
+                <h2 class="section-title">Text to Image</h2>
 
                 <div class="input-group">
                     <input
@@ -34,7 +32,6 @@
                 </div>
 
                 <button id="enhance-btn" class="btn btn-primary">
-                    <span class="btn-icon">&#10024;</span>
                     Enhance Prompt
                 </button>
 
@@ -49,7 +46,6 @@
                 </div>
 
                 <button id="generate-image-btn" class="btn btn-generate" disabled>
-                    <span class="btn-icon">&#128444;</span>
                     Generate Image
                 </button>
 
@@ -58,8 +54,7 @@
                     <label class="label">Generated Image:</label>
                     <img id="generated-image" class="generated-image" alt="Generated Image">
                     <button id="download-image-btn" class="btn btn-secondary btn-sm">
-                        <span class="btn-icon">&#8595;</span>
-                        Download Image
+                        Download
                     </button>
                 </div>
             </div>
@@ -68,7 +63,7 @@
 
             <!-- Section 2: Image to Variation -->
             <div class="section">
-                <h2 class="section-title">2. Image &rarr; Analysis &rarr; Variation</h2>
+                <h2 class="section-title">Image Variation</h2>
 
                 <div class="file-upload-container">
                     <input
@@ -78,7 +73,6 @@
                         accept="image/*"
                     >
                     <label for="image-upload" class="file-label">
-                        <span class="file-icon">&#128193;</span>
                         Choose File
                     </label>
                     <span id="file-name" class="file-name">No file chosen</span>
@@ -90,7 +84,6 @@
                 </div>
 
                 <button id="analyze-btn" class="btn btn-analyze" disabled>
-                    <span class="btn-icon">&#128269;</span>
                     Analyze Image
                 </button>
 
@@ -101,7 +94,6 @@
                 </div>
 
                 <button id="generate-variation-btn" class="btn btn-variation" disabled>
-                    <span class="btn-icon">&#127912;</span>
                     Generate Variation
                 </button>
 
@@ -110,8 +102,7 @@
                     <label class="label">Generated Variation:</label>
                     <img id="variation-image" class="generated-image" alt="Variation Image">
                     <button id="download-variation-btn" class="btn btn-secondary btn-sm">
-                        <span class="btn-icon">&#8595;</span>
-                        Download Variation
+                        Download
                     </button>
                 </div>
             </div>

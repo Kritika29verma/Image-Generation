@@ -2,8 +2,9 @@ const express = require('express');
 const cors = require('cors');
 // const serverless = require('serverless-http'); 
 const app = express();
+const path = require('path');
 const dotenv = require('dotenv');
-dotenv.config(); 
+dotenv.config({ path: path.join(__dirname, '..', 'backend', '.env') });
 
 const {
     GoogleGenerativeAI,
@@ -24,6 +25,9 @@ app.use(
 );
 // app.options("*", cors()); // Handle preflight requests
 app.use(express.json({ limit: '50mb' }));
+
+// Serve frontend files
+app.use(express.static(path.join(__dirname, '..', 'public')));
 
 // --- MODEL CONSTANTS ---
 const MULTIMODAL_MODEL = "gemini-2.5-flash";
